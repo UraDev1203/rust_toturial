@@ -1,18 +1,19 @@
-
+use std::collections::HashMap;
 fn main() {
+    let mut scores = HashMap::new();
 
-    let data = "initial contents";
-    let mut s = data.to_string();
-    let s2 = "bar";
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Yellow"), 50);
+    scores.entry(String::from("Red")).or_insert(40);
+    scores.entry(String::from("Blue")).or_insert(40);
 
-    s.push_str(s2);
-    println!("s2 is {s2}");
+    let team_name = String::from("Blue");
+    let score = scores.get(&team_name).copied().unwrap_or(0);
 
-    let s1 = String::from("tic");
-    let s2 = String::from("tac");
-    let s3 = String::from("toc");
+    println!("blue's score is {score}");
 
-    let s = format!("{s1}-{s2}-{s3}");
-    println!("{s}");
+    for (key, value) in scores {
+        println!("{key}: {value}")
+    }
 }
 
