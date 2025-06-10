@@ -1,5 +1,3 @@
-use std::fmt::format;
-
 pub trait Summary {
     fn summarize(&self) -> String {
         format!("(Read more from {}...)", self.summarize_author())
