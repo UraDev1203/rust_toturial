@@ -1,3 +1,5 @@
+use std::fmt::format;
+
 pub fn add(left: u64, right: u64) -> u64 {
     left + right
 }
@@ -25,6 +27,17 @@ mod tests {
 
         assert!(larger.can_hold(&smaller));
     }
+
+    #[test]
+    fn greeting_contaoins_name() {
+        let result = greeting("Carol");
+        assert!(result.contains("Carol"));
+
+    }
+}
+
+pub fn greeting(name: &str) -> String {
+    format!("Hello {name}")
 }
 
 struct Rectangle {
