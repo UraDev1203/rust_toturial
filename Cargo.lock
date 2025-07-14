@@ -2,5 +2,6 @@
 # It is not intended for manual editing.
 version = 4
 [[package]]
+
 name = "rust_toturial"
 version = "0.1.0"
